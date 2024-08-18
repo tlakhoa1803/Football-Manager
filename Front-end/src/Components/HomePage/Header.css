@@ -1,0 +1,178 @@
+/* Header.css */
+.container {
+  width: 100%;
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.team-logos ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 10px 250px;
+}
+
+.team-logos li {
+  margin: 0 5px;
+}
+
+.team-logos img {
+  height: 35px;
+  width: 35px;
+  padding: 7px;
+  border-color: rgb(160, 170, 170);
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.team-logos img:hover {
+  border-color: #ffa500;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.nav {
+  background-color: #D41819;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 109%;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.logo img {
+  height: 100px;
+}
+
+.title-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title-header {
+  color: #fff;
+  text-align: left;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  color: #fff;
+}
+
+.menu li {
+  margin: 2px;
+  position: relative;
+  padding: 10px;
+}
+
+.title-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.title-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dropdown-trigger {
+  position: relative;
+  padding: 10px;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #000;
+}
+
+.dropdown-item:hover {
+  color: red;
+}
+
+.dropdown-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropdown-item a:hover {
+  color: red;
+}
+
+.menu-item{
+  cursor: pointer;
+}
+
+.menu-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-item:focus {
+  outline: none;
+}
+
+
+.menu-item a:hover {
+  color: inherit;
+}
+.fade-out {
+  animation: fadeOut 1s;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+

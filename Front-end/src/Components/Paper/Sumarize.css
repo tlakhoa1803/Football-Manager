@@ -1,0 +1,29 @@
+.Sumarize-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  
+  .Sumarize-container h4 {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .Sumarize-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .Sumarize-container p span {
+    display: block;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  

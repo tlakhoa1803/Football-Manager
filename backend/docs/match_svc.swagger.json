@@ -1,0 +1,661 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "match_svc.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "MatchService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/delete/card_type/{cardTypeId}": {
+      "delete": {
+        "operationId": "MatchService_DeleteCardType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "cardTypeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cardTypeName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/delete/goal_type/{goalTypeId}": {
+      "delete": {
+        "operationId": "MatchService_DeleteGoalType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "goalTypeId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "goalTypeName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/match/calendar/{season}": {
+      "post": {
+        "operationId": "MatchService_CreateMatchCalendar",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoMatchCalendarRequest"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "season",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "clubOneName": {
+                  "type": "string"
+                },
+                "clubTwoName": {
+                  "type": "string"
+                },
+                "intendTime": {
+                  "type": "string"
+                },
+                "realTime": {
+                  "type": "string"
+                },
+                "matchRound": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "matchTurn": {
+                  "type": "string"
+                },
+                "idClubOne": {
+                  "type": "string"
+                },
+                "idClubTwo": {
+                  "type": "string"
+                },
+                "stadium": {
+                  "type": "string"
+                },
+                "matchStatus": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/match/create_all_results": {
+      "post": {
+        "operationId": "MatchService_CreateAllMatchResults",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/EmptyRequest"
+            }
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/match/progress_card": {
+      "post": {
+        "operationId": "MatchService_CreateProgressCard",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoProgressCard"
+            }
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/match/progress_score": {
+      "post": {
+        "operationId": "MatchService_CreateProgressScore",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoProgressScore"
+            }
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/match/result_score/{matchId}": {
+      "post": {
+        "operationId": "MatchService_CreateMatchResult",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "homeTeamGoal": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "awayTeamGoal": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "homeTeam": {
+                  "type": "string"
+                },
+                "awayTeam": {
+                  "type": "string"
+                },
+                "yellowCardHome": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "yellowCardAway": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "redCardHome": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "redCardAway": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "matchRound": {
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "stadium": {
+                  "type": "string"
+                },
+                "capacity": {
+                  "type": "string"
+                },
+                "score": {
+                  "type": "string"
+                },
+                "homeLogo": {
+                  "type": "string"
+                },
+                "awayLogo": {
+                  "type": "string"
+                },
+                "time": {
+                  "type": "string"
+                },
+                "seaSon": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/match/update_calendar": {
+      "put": {
+        "operationId": "MatchService_UpdateMatchCalendar",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoMatchCalendarResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoMatchCalendar"
+            }
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/match_event/card_type": {
+      "post": {
+        "operationId": "MatchService_CreateCardType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoCardType"
+            }
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    },
+    "/match_event/goal_type": {
+      "post": {
+        "operationId": "MatchService_CreateGoalType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/protoGoalType"
+            }
+          }
+        ],
+        "tags": [
+          "MatchService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "EmptyRequest": {
+      "type": "object"
+    },
+    "SuccessMessageResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/SuccessMessageResponsesuccess_message"
+        }
+      }
+    },
+    "SuccessMessageResponsesuccess_message": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoCardType": {
+      "type": "object",
+      "properties": {
+        "cardTypeId": {
+          "type": "string"
+        },
+        "cardTypeName": {
+          "type": "string"
+        }
+      }
+    },
+    "protoGoalType": {
+      "type": "object",
+      "properties": {
+        "goalTypeId": {
+          "type": "string"
+        },
+        "goalTypeName": {
+          "type": "string"
+        }
+      }
+    },
+    "protoMatchCalendar": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "clubOneName": {
+          "type": "string"
+        },
+        "clubTwoName": {
+          "type": "string"
+        },
+        "intendTime": {
+          "type": "string"
+        },
+        "realTime": {
+          "type": "string"
+        },
+        "matchRound": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchTurn": {
+          "type": "string"
+        },
+        "idClubOne": {
+          "type": "string"
+        },
+        "idClubTwo": {
+          "type": "string"
+        },
+        "season": {
+          "type": "string"
+        },
+        "stadium": {
+          "type": "string"
+        },
+        "matchStatus": {
+          "type": "string"
+        }
+      }
+    },
+    "protoMatchCalendarRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        }
+      }
+    },
+    "protoMatchCalendarResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/protoMatchCalendarResponseData"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoMatchCalendarResponseData": {
+      "type": "object",
+      "properties": {
+        "clubOneName": {
+          "type": "string"
+        },
+        "clubTwoName": {
+          "type": "string"
+        },
+        "intendTime": {
+          "type": "string"
+        },
+        "realTime": {
+          "type": "string"
+        },
+        "matchRound": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchTurn": {
+          "type": "string"
+        },
+        "stadium": {
+          "type": "string"
+        },
+        "season": {
+          "type": "string"
+        },
+        "matchStatus": {
+          "type": "string"
+        },
+        "matchId": {
+          "type": "string"
+        }
+      }
+    },
+    "protoProgressCard": {
+      "type": "object",
+      "properties": {
+        "matchId": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "playerName": {
+          "type": "string"
+        },
+        "cardType": {
+          "type": "string"
+        },
+        "timeInMatch": {
+          "type": "string"
+        }
+      }
+    },
+    "protoProgressScore": {
+      "type": "object",
+      "properties": {
+        "matchId": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "playerName": {
+          "type": "string"
+        },
+        "goalType": {
+          "type": "string"
+        },
+        "timeInMatch": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

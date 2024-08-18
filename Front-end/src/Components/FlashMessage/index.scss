@@ -1,0 +1,16 @@
+@import "../../assets/scss/colors";
+
+#flash-message {
+  position: fixed;
+  top: 15px;
+  right: 10px;
+  min-width: 300px;
+  background-color: $white;
+  line-height: 22px;
+  z-index: 9999;
+  transition: all 0.2s;
+
+  @media (max-width: 767px) {
+    width: calc(100% - 30px);
+  }
+}

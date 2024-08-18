@@ -1,0 +1,346 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "summary_svc.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "SummaryService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/league-rule": {
+      "get": {
+        "operationId": "SummaryService_GetLeagueRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CreateLeagueRuleResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "SummaryService"
+        ]
+      },
+      "post": {
+        "operationId": "SummaryService_CreateLeagueRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateLeagueRuleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SummaryService"
+        ]
+      }
+    },
+    "/league-rule/update": {
+      "put": {
+        "operationId": "SummaryService_UpdateLeagueRule",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateLeagueRuleRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SummaryService"
+        ]
+      }
+    },
+    "/season": {
+      "post": {
+        "operationId": "SummaryService_CreateSeason",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CreateSeasonRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SummaryService"
+        ]
+      }
+    },
+    "/summary/{seaSon}": {
+      "post": {
+        "operationId": "SummaryService_CreateSummary",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "seaSon",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "summary": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "#/definitions/Summary"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "SummaryService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "CreateLeagueRuleRequest": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "CreateLeagueRuleResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/LeagueRuleResponse"
+          }
+        }
+      }
+    },
+    "CreateSeasonRequest": {
+      "type": "object",
+      "properties": {
+        "seaSon": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "LeagueRuleResponse": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "SuccessMessageResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/SuccessMessageResponsesuccess_message"
+        }
+      }
+    },
+    "SuccessMessageResponsesuccess_message": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "Summary": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "clubId": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "matchPlayed": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchWon": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchLost": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchDraw": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "goalScored": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "goalConceded": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "goalDifference": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "points": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yellowCard": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "redCard": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "rank": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "seaSon": {
+          "type": "string"
+        }
+      }
+    },
+    "UpdateLeagueRuleRequest": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

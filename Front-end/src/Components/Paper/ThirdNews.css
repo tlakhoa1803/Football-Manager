@@ -1,0 +1,42 @@
+.ThirdNews-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .ThirdNews-title {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .ThirdNews-title h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .ThirdNews-title h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+  } 
+  
+  .ThirdNews-title img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .ThirdNews-title p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+  
+  .ThirdNews-title p span {
+    display: block;
+    margin-bottom: 20px;
+  }
+  

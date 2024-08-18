@@ -1,0 +1,157 @@
+syntax = "proto3";
+
+message   ClubProfileResponse {
+  message Data {
+    string id = 1;
+    string name_club = 2;
+    string name_award = 3;
+    string shorthand = 4;
+    string name_stadium = 5;
+    string achievement = 6;
+    string update_by = 7;
+    string owner_by = 8;
+    string sea_son =9;
+    string update_at = 10;
+    string logo = 11;
+    string coach = 12;
+    string club_id = 13;
+  }
+  Data data = 1;
+  string message = 2;
+}
+
+message ClubProfileRequest {
+    string name_club = 1;
+    string name_award = 2;
+    string logo = 3;
+    string sea_son = 4;
+    string achievement = 5;
+    string owner_by = 6;
+    string create_by = 7;
+    string create_at = 8;
+    string name_stadium = 9;
+    string short_hand = 10;
+}
+
+message ClubProfileIdRequest {
+    string id_club = 1;
+    string sea_son = 2;
+}
+
+
+message PLayerProfileRequest {
+  string id = 1 ;
+  string club_name = 2;
+  string sea_son= 3;
+  string type_player = 4;
+  string height = 5;
+  string weight = 6;
+  string position = 7;
+  string nationality = 8;
+  string kit = 9;
+  string achievement = 10;
+  string name = 11;
+  string birth_day = 12;
+  string status = 13;
+}
+
+message PLayerProfileResponse {
+  message Data {
+    string club_name = 1;
+    string sea_son= 2;
+    string type_player = 3;
+    string height = 4;
+    string weight = 5;
+    string position = 6;
+    string nationality = 7;
+    string kit = 8;
+    string achievement = 9;
+    string name = 10;
+    string birth_day = 11;
+    string status = 12;
+    string id = 13;
+    string link_logo = 14;
+  }
+  Data data = 1;
+  string message = 2;
+}
+
+message CreatePlayerRequest {
+  PLayerProfileRequest player = 1;
+}
+
+
+message PlayerProfileListResponse {
+  repeated PLayerProfileResponse.Data data = 1;
+  string message = 2;
+  string foreign_player = 3;
+  string player = 4;
+}
+
+message ClubProfileListRequest {
+  string name_club = 1;
+}
+
+message ClubProfileListResponse {
+  repeated ClubProfileResponse.Data data = 1;
+  string message = 2;
+}
+
+message PLayerRequest {
+  string id = 1;
+}
+
+message CoachProfileRequest {
+    string id = 1;
+    string name = 2;
+    string club_name = 3;
+    string birthday = 4;
+    string  country = 5;
+    string award = 6;
+    string role = 7;
+    string club_id = 8;
+}
+
+message CoachProfileResponse {
+  message Data {string id = 1;
+    string name = 2;
+    string club_name = 3;
+    string birthday = 4;
+    string  country = 5;
+    string award = 6;
+    string role = 7;
+    string club_id = 8;
+  }
+  Data data = 1;
+  string message = 2;
+}
+message CoachProfileResponseList {
+  repeated CoachProfileResponse.Data data = 1;
+  string message = 2;
+}
+
+message CoachProfileListRequest {
+  string club_name = 1;
+}
+
+message CoachProfileListResponse {
+  repeated CoachProfileResponse.Data data = 1;
+  string message = 2;
+}
+
+message CoachRequest{
+  string id = 1;
+}
+
+message CoachClubRequest{
+  string club_id = 1;
+}
+
+message StadiumProfileRequest{
+    string id = 1;
+    string stadium_name = 2;
+    string capacity = 3;
+    string stadium_address = 4;
+    string club_id = 5;
+    string sea_son = 6;
+}

@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package proto;
+import "google/api/annotations.proto";
+import "message.proto";
+import "summary.proto";
+
+service SummaryService{
+  rpc CreateSummary(CreateSummaryRequest) returns (SuccessMessageResponse){
+    option (google.api.http) = {
+      post: "/summary/{sea_son}"
+      body: "*"
+    };
+  }
+  rpc CreateSeason(CreateSeasonRequest) returns (SuccessMessageResponse){
+    option (google.api.http) = {
+      post: "/season"
+      body: "*"
+    };
+  }
+  rpc CreateLeagueRule(CreateLeagueRuleRequest) returns (SuccessMessageResponse){
+    option (google.api.http) = {
+      post: "/league-rule"
+      body: "*"
+    };
+  }
+  rpc GetLeagueRule (EmptyRequest) returns (CreateLeagueRuleResponse) {
+    option (google.api.http) = {
+      get: "/league-rule"
+    };
+  }
+  rpc UpdateLeagueRule (UpdateLeagueRuleRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      put: "/league-rule/update"
+      body: "*"
+    };
+  }
+
+}

@@ -1,0 +1,29 @@
+.team-header-tab{
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 20px;
+}
+.team-logo-tab {
+  width: 80px;
+  height: 100px;
+}
+.sta_coach
+{
+  margin-left: 1200px;
+  font-size: 20px;
+}
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin-left: 20px;
+}
+
+.title_tab  {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+}

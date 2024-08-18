@@ -1,0 +1,60 @@
+.news-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background: white;
+  width: 100%;
+  padding: 20px;
+}
+
+.news-container h1 {
+  color: red;
+  padding: 10px;
+  align-items: left;
+  margin: 0;
+}
+
+.highlight-news {
+  display: flex;
+
+}
+
+.highlight-news img {
+  width: 800px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.highlight-description {
+  flex: 1;
+}
+
+.news-grid {
+  display: flex;
+  flex-direction: column; /* Đổi từ 'grid' thành 'flex' và 'row' thành 'column' */
+  margin-top: 20px;
+}
+
+.news-item {
+  margin-bottom: 20px; /* Thêm margin bottom để tạo khoảng cách giữa các news-item */
+}
+
+.news-description {
+  display: flex;
+  align-items: center;
+}
+
+.news-description img {
+  width: 100px;
+  height: 70px;
+  margin-right: 10px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-content h3, .text-content p {
+  margin: 0;
+}

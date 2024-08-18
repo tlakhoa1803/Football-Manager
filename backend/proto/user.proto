@@ -1,0 +1,101 @@
+syntax = "proto3";
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LoginResponse {
+  message Data {
+    string access_token = 1;
+    string refresh_token = 2;
+  }
+  Data data = 1;
+}
+
+message TokenRequest {
+  string token = 1;
+}
+
+message RegisterRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  string season = 4;
+}
+
+message RegisterWithTokenRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  string token = 4;
+}
+
+message RegisterResponse {
+    string club_name = 1;
+    string message = 2;
+}
+
+message EmailRequest {
+  string email = 1;
+}
+
+message GetProfileResponse {
+  message Data {
+    string name = 1;
+    string email = 2;
+    string phone = 3;
+    string address = 4;
+    string position = 5;
+    string club_name = 6;
+    string club_id  = 7;
+    string sea_son = 8;
+  }
+  Data data = 1;
+}
+
+message UpdateProfileRequest {
+  string name = 1;
+  string phone = 2;
+  string address = 3;
+}
+
+message UpdatePositionRequest{
+  string position = 1;
+  string id = 2;
+}
+
+message DeleteUserRequest {
+  string id = 1;
+}
+
+message DeactivateProfileRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message LogoutRequest {
+  string token = 1;
+}
+
+message LogoutResponse {
+  string message = 1;
+}
+
+message GetUsersResponse{
+  message Data {
+    string name = 1;
+    string email = 2;
+    string phone = 3;
+    string address = 4;
+    string position = 5;
+    string club_name = 6;
+    string id = 7;
+  }
+  repeated Data data = 1;
+}
+
+message GetUserByIdRequest {
+  string id = 1;
+}
+

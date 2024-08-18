@@ -1,0 +1,47 @@
+/* src/app.scss */
+.season-selector {
+  text-align: center;
+  margin: 20px 0 20px 1200px;
+}
+
+.season-selector label {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.table-rank-league {
+  border-collapse: collapse;
+  font-size: 1em;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  margin-left: 70px;
+}
+
+.table-header-cell, .table-cell {
+  padding: 12px 15px;
+  border: 1px solid #dddddd;
+}
+
+.table-header-cell {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td img {
+  vertical-align: middle;
+}
+.TitleRank
+{
+  margin-left: 80px;
+  font-size: 50px;
+}

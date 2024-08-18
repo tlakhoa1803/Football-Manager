@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+message Summary {
+  string id = 1;
+  string club_id = 2;
+  string club_name = 3;
+  int32 match_played = 4;
+  int32 match_won = 5;
+  int32 match_lost = 6;
+  int32 match_draw = 7;
+  int32 goal_scored = 8;
+  int32 goal_conceded = 9;
+  int32 goal_difference = 10;
+  int32 points = 11;
+  int32 yellow_card = 12;
+  int32 red_card = 13;
+  int32 rank = 14;
+  string sea_son = 15;
+}
+
+message CreateSummaryRequest{
+  repeated Summary summary = 1;
+  string sea_son = 2;
+}
+
+message CreateSummaryResponse{
+  string message = 1;
+}
+
+message GetSummaryRequest{
+  string sea_son = 1;
+}
+
+
+message SummaryResponse {
+    string club_id = 1;
+    string club_name = 2;
+    int32 match_played = 3;
+    int32 match_won = 4;
+    int32 match_lost = 5;
+    int32 match_draw = 6;
+    int32 goal_scored = 7;
+    int32 goal_conceded = 8;
+    int32 goal_difference = 9;
+    int32 points = 10;
+    int32 yellow_card = 11;
+    int32 red_card = 12;
+    int32 rank = 13;
+    string sea_son = 14;
+    string logo_link = 15;
+    string shorthand = 16;
+  }
+
+message SummaryListResponse {
+  repeated SummaryResponse data = 1;
+  string message = 2;
+}
+
+message CreateSeasonRequest{
+  string sea_son = 1;
+  string name = 2;
+}
+
+message CreateLeagueRuleRequest{
+  string key = 1;
+  string value = 2;
+}
+
+message CreateLeagueRuleResponse{
+  repeated LeagueRuleResponse data = 1;
+}
+
+message LeagueRuleResponse {
+  string key = 1;
+  string value = 2;
+}
+
+message UpdateLeagueRuleRequest{
+  string value = 1;
+  string key = 2;
+}

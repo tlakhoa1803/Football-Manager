@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package proto;
+import "google/api/annotations.proto";
+import "message.proto";
+import "match.proto";
+
+service MatchService {
+  rpc CreateMatchCalendar (MatchCalendar) returns (MatchCalendarRequest) {
+    option (google.api.http) = {
+      post: "/match/calendar/{season}"
+      body: "*"
+    };
+  }
+
+  rpc UpdateMatchCalendar (MatchCalendar) returns (MatchCalendarResponse) {
+    option (google.api.http) = {
+      put: "/match/update_calendar"
+      body: "*"
+    };
+  }
+  rpc CreateProgressScore (ProgressScore) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/match/progress_score"
+      body: "*"
+    };
+  }
+  rpc CreateProgressCard (ProgressCard) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/match/progress_card"
+      body: "*"
+    };
+  }
+  rpc CreateMatchResult (ResultScore) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/match/result_score/{match_id}"
+      body: "*"
+    };
+  }
+  rpc CreateAllMatchResults (EmptyRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/match/create_all_results"
+      body: "*"
+    };
+  }
+  rpc CreateGoalType (GoalType) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/match_event/goal_type"
+      body: "*"
+    };
+  }
+  rpc CreateCardType (CardType) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/match_event/card_type"
+      body: "*"
+    };
+  }
+
+  rpc DeleteGoalType (GoalType) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      delete: "/delete/goal_type/{goal_type_id}"
+    };
+  }
+  rpc DeleteCardType (CardType) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      delete: "/delete/card_type/{card_type_id}"
+    };
+  }
+}

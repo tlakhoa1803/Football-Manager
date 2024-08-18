@@ -1,0 +1,23 @@
+.football-field {
+  background-size: cover;
+  height: 100%; /* Adjust as needed */
+  position: relative;
+}
+
+.player {
+  position: absolute;
+  /* You'll need to add top and left properties to position the players on the field */
+}
+
+.lineup-container {
+  width: 100%;
+  height: auto;
+}
+.resized-image {
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* This will maintain the aspect ratio of the image */
+}
+.player {
+  position: absolute;
+  /* Add other styles as needed */
+}

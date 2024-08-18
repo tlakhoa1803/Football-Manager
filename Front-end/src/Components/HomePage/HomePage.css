@@ -1,0 +1,17 @@
+.main-content {
+    display: flex;
+    flex-direction: row; /* Ensure that News and Ranking are side by side */
+  }
+  
+  .news-container {
+    flex: 8; /* News takes 70% of the parent container */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .ranking {
+    flex: 2; /* Ranking takes 30% of the parent container */
+    margin-top: 20px;
+  }
+  

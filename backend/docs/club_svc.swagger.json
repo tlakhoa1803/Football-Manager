@@ -1,0 +1,885 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "club_svc.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "ClubService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/club": {
+      "post": {
+        "operationId": "ClubService_CreateClub",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ClubProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClubProfileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/club-profile": {
+      "get": {
+        "summary": "Get a club's information",
+        "operationId": "ClubService_GetClubProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ClubProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/club/coach/all": {
+      "get": {
+        "operationId": "ClubService_GetListCoachProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CoachProfileListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "clubName",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/club/coach/{id}": {
+      "get": {
+        "operationId": "ClubService_GetCoachProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CoachProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/club/player-all": {
+      "get": {
+        "operationId": "ClubService_GetAllPlayerProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/PlayerProfileListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/club/profile/all": {
+      "get": {
+        "operationId": "ClubService_GetAllClubProfile",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ClubProfileListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/club/update": {
+      "put": {
+        "operationId": "ClubService_UpdateClub",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ClubProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ClubProfileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/coach": {
+      "post": {
+        "operationId": "ClubService_CreateCoach",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CoachProfileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/coach/update/{id}": {
+      "put": {
+        "operationId": "ClubService_UpdateCoach",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "clubName": {
+                  "type": "string"
+                },
+                "birthday": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "award": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "clubId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/delete/coach/{id}": {
+      "delete": {
+        "operationId": "ClubService_DeleteCoach",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/delete/player/{id}": {
+      "delete": {
+        "operationId": "ClubService_DeletePlayer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/player": {
+      "post": {
+        "operationId": "ClubService_CreatePlayer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PLayerProfileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/player/update/{id}": {
+      "put": {
+        "operationId": "ClubService_UpdatePlayer",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/PLayerProfileResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "clubName": {
+                  "type": "string"
+                },
+                "seaSon": {
+                  "type": "string"
+                },
+                "typePlayer": {
+                  "type": "string"
+                },
+                "height": {
+                  "type": "string"
+                },
+                "weight": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string"
+                },
+                "nationality": {
+                  "type": "string"
+                },
+                "kit": {
+                  "type": "string"
+                },
+                "achievement": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "birthDay": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    },
+    "/stadium": {
+      "post": {
+        "operationId": "ClubService_CreateStadium",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SuccessMessageResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/StadiumProfileRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ClubService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "ClubProfileListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/ClubProfileResponseData"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "ClubProfileRequest": {
+      "type": "object",
+      "properties": {
+        "nameClub": {
+          "type": "string"
+        },
+        "nameAward": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "seaSon": {
+          "type": "string"
+        },
+        "achievement": {
+          "type": "string"
+        },
+        "ownerBy": {
+          "type": "string"
+        },
+        "createBy": {
+          "type": "string"
+        },
+        "createAt": {
+          "type": "string"
+        },
+        "nameStadium": {
+          "type": "string"
+        },
+        "shortHand": {
+          "type": "string"
+        }
+      }
+    },
+    "ClubProfileResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/ClubProfileResponseData"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "ClubProfileResponseData": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "nameClub": {
+          "type": "string"
+        },
+        "nameAward": {
+          "type": "string"
+        },
+        "shorthand": {
+          "type": "string"
+        },
+        "nameStadium": {
+          "type": "string"
+        },
+        "achievement": {
+          "type": "string"
+        },
+        "updateBy": {
+          "type": "string"
+        },
+        "ownerBy": {
+          "type": "string"
+        },
+        "seaSon": {
+          "type": "string"
+        },
+        "updateAt": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "coach": {
+          "type": "string"
+        },
+        "clubId": {
+          "type": "string"
+        }
+      }
+    },
+    "CoachProfileListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/CoachProfileResponseData"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "CoachProfileRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "birthday": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "award": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "clubId": {
+          "type": "string"
+        }
+      }
+    },
+    "CoachProfileResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/CoachProfileResponseData"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "CoachProfileResponseData": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "birthday": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "award": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "clubId": {
+          "type": "string"
+        }
+      }
+    },
+    "PLayerProfileRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "seaSon": {
+          "type": "string"
+        },
+        "typePlayer": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "nationality": {
+          "type": "string"
+        },
+        "kit": {
+          "type": "string"
+        },
+        "achievement": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "birthDay": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "PLayerProfileResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/PLayerProfileResponseData"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "PLayerProfileResponseData": {
+      "type": "object",
+      "properties": {
+        "clubName": {
+          "type": "string"
+        },
+        "seaSon": {
+          "type": "string"
+        },
+        "typePlayer": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "string"
+        },
+        "position": {
+          "type": "string"
+        },
+        "nationality": {
+          "type": "string"
+        },
+        "kit": {
+          "type": "string"
+        },
+        "achievement": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "birthDay": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "linkLogo": {
+          "type": "string"
+        }
+      }
+    },
+    "PlayerProfileListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/PLayerProfileResponseData"
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "foreignPlayer": {
+          "type": "string"
+        },
+        "player": {
+          "type": "string"
+        }
+      }
+    },
+    "StadiumProfileRequest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "stadiumName": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "string"
+        },
+        "stadiumAddress": {
+          "type": "string"
+        },
+        "clubId": {
+          "type": "string"
+        },
+        "seaSon": {
+          "type": "string"
+        }
+      }
+    },
+    "SuccessMessageResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/SuccessMessageResponsesuccess_message"
+        }
+      }
+    },
+    "SuccessMessageResponsesuccess_message": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

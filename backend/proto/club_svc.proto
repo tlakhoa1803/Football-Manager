@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package proto;
+import "google/api/annotations.proto";
+import "message.proto";
+import "user.proto";
+import "club.proto";
+
+service ClubService {
+  //Get a club's information
+  rpc GetClubProfile (EmptyRequest) returns (ClubProfileResponse) {
+    option (google.api.http) = {
+      get: "/club-profile"
+    };
+  }
+  rpc CreateClub (ClubProfileRequest) returns (ClubProfileResponse) {
+    option (google.api.http) = {
+      post: "/club"
+      body: "*"
+    };
+  }
+
+  rpc UpdateClub (ClubProfileRequest) returns (ClubProfileResponse) {
+    option (google.api.http) = {
+      put: "/club/update"
+      body: "*"
+    };
+  }
+  rpc GetAllClubProfile (EmptyRequest) returns (ClubProfileListResponse) {
+    option (google.api.http) = {
+      get: "/club/profile/all"
+    };
+  }
+  rpc CreatePlayer (PLayerProfileRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/player"
+      body: "*"
+    };
+  }
+  rpc UpdatePlayer (PLayerProfileRequest) returns (PLayerProfileResponse) {
+    option (google.api.http) = {
+      put: "/player/update/{id}"
+      body: "*"
+    };
+  }
+  rpc DeletePlayer (PLayerRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      delete: "/delete/player/{id}"
+    };
+  }
+  rpc GetAllPlayerProfile (EmptyRequest) returns (PlayerProfileListResponse) {
+    option (google.api.http) = {
+      get: "/club/player-all"
+    };
+  }
+  rpc CreateCoach (CoachProfileRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/coach"
+      body: "*"
+    };
+  }
+  rpc DeleteCoach (CoachRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      delete: "/delete/coach/{id}"
+    };
+  }
+  rpc UpdateCoach (CoachProfileRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      put: "/coach/update/{id}"
+      body: "*"
+    };
+  }
+  rpc GetCoachProfile (CoachRequest) returns (CoachProfileResponse) {
+    option (google.api.http) = {
+      get: "/club/coach/{id}"
+    };
+  }
+
+  rpc GetListCoachProfile (CoachProfileListRequest) returns (CoachProfileListResponse) {
+    option (google.api.http) = {
+      get: "/club/coach/all"
+    };
+  }
+  rpc CreateStadium (StadiumProfileRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/stadium"
+      body: "*"
+    };
+  }
+}

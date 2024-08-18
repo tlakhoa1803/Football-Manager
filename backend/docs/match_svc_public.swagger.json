@@ -1,0 +1,889 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "match_svc_public.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "MatchServicePublic"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/match/calendar/{id}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetMatchCalendarById",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoMatchCalendarResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match/progress_card/{matchId}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetProgressCardByMatchID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoProgressCardListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match/progress_score/{matchId}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetProgressScoreByMatchID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoProgressScoreListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match/result_score/{matchId}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetMatchResultByID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResultScoreResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match/result_score/{round}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetAllMatchResultByRound",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResultSumScoreListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "round",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match/statistic/{matchId}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetMatchStatisticByMatchID",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoProgressGoal"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "matchId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match/status/{status}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetAllMatchCalendarsWithStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoMatchCalendarListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match_calendar/all": {
+      "get": {
+        "operationId": "MatchServicePublic_GetAllMatchCalendar",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoMatchCalendarListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match_calendar/all/{round}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetAllMatchCalendarByRound",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoMatchCalendarListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "round",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match_event/card_type": {
+      "get": {
+        "operationId": "MatchServicePublic_GetAllCardType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoCardTypeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match_event/goal_type": {
+      "get": {
+        "operationId": "MatchServicePublic_GetAllGoalType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoGoalTypeResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/match_result/all": {
+      "get": {
+        "operationId": "MatchServicePublic_GetAllMatchResults",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/protoResultScoreListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    },
+    "/summary/{seaSon}": {
+      "get": {
+        "operationId": "MatchServicePublic_GetSummary",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/SummaryListResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "seaSon",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "MatchServicePublic"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "SummaryListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/SummaryResponse"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "SummaryResponse": {
+      "type": "object",
+      "properties": {
+        "clubId": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "matchPlayed": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchWon": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchLost": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchDraw": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "goalScored": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "goalConceded": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "goalDifference": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "points": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yellowCard": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "redCard": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "rank": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "seaSon": {
+          "type": "string"
+        },
+        "logoLink": {
+          "type": "string"
+        },
+        "shorthand": {
+          "type": "string"
+        }
+      }
+    },
+    "protoCardType": {
+      "type": "object",
+      "properties": {
+        "cardTypeId": {
+          "type": "string"
+        },
+        "cardTypeName": {
+          "type": "string"
+        }
+      }
+    },
+    "protoCardTypeResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoCardType"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoGoalType": {
+      "type": "object",
+      "properties": {
+        "goalTypeId": {
+          "type": "string"
+        },
+        "goalTypeName": {
+          "type": "string"
+        }
+      }
+    },
+    "protoGoalTypeResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoGoalType"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoMatchCalendarListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoMatchCalendarResponseData"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoMatchCalendarResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/protoMatchCalendarResponseData"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoMatchCalendarResponseData": {
+      "type": "object",
+      "properties": {
+        "clubOneName": {
+          "type": "string"
+        },
+        "clubTwoName": {
+          "type": "string"
+        },
+        "intendTime": {
+          "type": "string"
+        },
+        "realTime": {
+          "type": "string"
+        },
+        "matchRound": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchTurn": {
+          "type": "string"
+        },
+        "stadium": {
+          "type": "string"
+        },
+        "season": {
+          "type": "string"
+        },
+        "matchStatus": {
+          "type": "string"
+        },
+        "matchId": {
+          "type": "string"
+        }
+      }
+    },
+    "protoPlayer": {
+      "type": "object",
+      "properties": {
+        "playerNameCard": {
+          "type": "string"
+        },
+        "cardType": {
+          "type": "string"
+        },
+        "timeInMatchCard": {
+          "type": "string"
+        },
+        "playerNameGoal": {
+          "type": "string"
+        },
+        "goalType": {
+          "type": "string"
+        },
+        "timeInMatchGoal": {
+          "type": "string"
+        }
+      }
+    },
+    "protoProgressCard": {
+      "type": "object",
+      "properties": {
+        "matchId": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "playerName": {
+          "type": "string"
+        },
+        "cardType": {
+          "type": "string"
+        },
+        "timeInMatch": {
+          "type": "string"
+        }
+      }
+    },
+    "protoProgressCardListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoProgressCard"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoProgressGoal": {
+      "type": "object",
+      "properties": {
+        "matchId": {
+          "type": "string"
+        },
+        "stadium": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "string"
+        },
+        "homeTeam": {
+          "$ref": "#/definitions/protoTeam"
+        },
+        "awayTeam": {
+          "$ref": "#/definitions/protoTeam"
+        }
+      }
+    },
+    "protoProgressScore": {
+      "type": "object",
+      "properties": {
+        "matchId": {
+          "type": "string"
+        },
+        "clubName": {
+          "type": "string"
+        },
+        "playerName": {
+          "type": "string"
+        },
+        "goalType": {
+          "type": "string"
+        },
+        "timeInMatch": {
+          "type": "string"
+        }
+      }
+    },
+    "protoProgressScoreListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoProgressScore"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoResultScore": {
+      "type": "object",
+      "properties": {
+        "matchId": {
+          "type": "string"
+        },
+        "homeTeamGoal": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "awayTeamGoal": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "homeTeam": {
+          "type": "string"
+        },
+        "awayTeam": {
+          "type": "string"
+        },
+        "yellowCardHome": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "yellowCardAway": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "redCardHome": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "redCardAway": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "matchRound": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "stadium": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "string"
+        },
+        "score": {
+          "type": "string"
+        },
+        "homeLogo": {
+          "type": "string"
+        },
+        "awayLogo": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "seaSon": {
+          "type": "string"
+        }
+      }
+    },
+    "protoResultScoreListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoResultScore"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoResultScoreResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/protoResultScore"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoResultSumScoreListResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoSumScore"
+          }
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "protoSumScore": {
+      "type": "object",
+      "properties": {
+        "matchId": {
+          "type": "string"
+        },
+        "homeTeamGoal": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "homeTeamName": {
+          "type": "string"
+        },
+        "awayTeamGoal": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "awayTeamName": {
+          "type": "string"
+        },
+        "matchRound": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "stadium": {
+          "type": "string"
+        },
+        "score": {
+          "type": "string"
+        },
+        "homeLogo": {
+          "type": "string"
+        },
+        "awayLogo": {
+          "type": "string"
+        },
+        "homeTeamFullName": {
+          "type": "string"
+        },
+        "awayTeamFullName": {
+          "type": "string"
+        }
+      }
+    },
+    "protoTeam": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string"
+        },
+        "goals": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "players": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protoPlayer"
+          }
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

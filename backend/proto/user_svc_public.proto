@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package proto;
+import "google/api/annotations.proto";
+import "message.proto";
+import "user.proto";
+
+// Here is the overall greeting service definition where we define all our endpoints
+service UserServicePublic {
+  //Register a new user
+  rpc Register(RegisterRequest) returns (RegisterResponse) {
+    option (google.api.http) = {
+      post: "/register"
+      body: "*"
+    };
+  }
+
+  rpc VerifyEmail(TokenRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      post: "/email/verify"
+      body: "*"
+    };
+  }
+
+
+  //Login a user
+  rpc Login(LoginRequest) returns (LoginResponse) {
+    option (google.api.http) = {
+      post: "/login"
+      body: "*"
+    };
+  }
+
+  //Delete a user's profile
+  rpc DeactivateProfile (DeactivateProfileRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      delete: "/profile"
+    };
+  }
+}

@@ -1,0 +1,148 @@
+/* General styling */
+.match-page {
+  padding: 20px;
+}
+.title_match{
+  font-size: 30px;
+}
+.match-info {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.match-info .time_where {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.match-info .scoreboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.match-info .team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 100px; /* Điều chỉnh khoảng cách giữa logo và tỉ số */
+}
+
+.match-info .team-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 5px;
+}
+
+.match-info .team-name {
+  font-size: 18px;
+  text-align: center;
+  width: 250px; /* Điều chỉnh theo ý muốn */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.match-info .score_team {
+  display: flex;
+  align-items: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.match-info .score_team span {
+  margin: 0 10px;
+}
+
+/* Player stats */
+.player-stats {
+  display: flex;
+  /*justify-content: space-between;*/
+  margin-top: 10px;
+}
+
+.player-stats .team-stats {
+  width: 45%;
+}
+
+.player-stats .team-name1 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.player-stats .team-name2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-left: 190px;
+}
+.player-stats ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.player-stats ul li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-stats ul li .player-info1 {
+  width: 250px; /* Điều chỉnh kích thước theo ý muốn */
+  margin-left: -80px;
+}
+
+.player-stats ul li .goal-time1 {
+  width: 20px; /* Điều chỉnh kích thước theo ý muốn */
+  margin-left: -100px;
+}
+
+.player-stats ul li .goal-type1 {
+  width: 150px; /* Điều chỉnh kích thước theo ý muốn */
+  margin-left: -100px;
+}
+.player-stats ul li .player-info2 {
+  width: 250px; /* Điều chỉnh kích thước theo ý muốn */
+  margin-right: -80px;
+}
+
+.player-stats ul li .goal-time2 {
+  width: 20px; /* Điều chỉnh kích thước theo ý muốn */
+  margin-right: -70px;
+}
+
+.player-stats ul li .goal-type2 {
+  width: 150px; /* Điều chỉnh kích thước theo ý muốn */
+  margin-right: -100px;
+}
+
+/* Button styling */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

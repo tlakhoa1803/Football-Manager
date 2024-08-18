@@ -1,0 +1,15 @@
+@import "../../assets/scss/colors";
+
+.text-input {
+  height: fit-content;
+
+  .icon {
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0.8rem;
+    height: 0.8rem;
+    color: $amethystSmoke;
+  }
+}

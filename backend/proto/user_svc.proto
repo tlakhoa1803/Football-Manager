@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package proto;
+import "google/api/annotations.proto";
+import "message.proto";
+import "user.proto";
+
+// Here is the overall greeting service definition where we define all our endpoints
+service UserService {
+  //Refresh a user's token
+  rpc RefreshToken (EmptyRequest) returns (LoginResponse) {
+    option (google.api.http) = {
+      post: "/refresh"
+    };
+  }
+
+  //Get a user's profile
+  rpc GetProfile (EmptyRequest) returns (GetProfileResponse) {
+    option (google.api.http) = {
+      get: "/profile"
+    };
+  }
+
+  //Update a user's profile
+  rpc UpdateProfile (UpdateProfileRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      put: "/profile"
+      body: "*"
+    };
+  }
+
+  rpc Logout (LogoutRequest) returns (LogoutResponse) {
+    option (google.api.http) = {
+      get: "/logout"
+    };
+  }
+
+  rpc GetUsers (EmptyRequest) returns (GetUsersResponse) {
+    option (google.api.http) = {
+      get: "/user_all"
+    };
+  }
+
+  rpc GetUserById (GetUserByIdRequest) returns (GetProfileResponse) {
+    option (google.api.http) = {
+      get: "/users/{id}"
+    };
+  }
+  rpc UpdatePosition (UpdatePositionRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      put: "/position/{id}"
+      body: "*"
+    };
+  }
+  rpc DeleteUser (DeleteUserRequest) returns (SuccessMessageResponse) {
+    option (google.api.http) = {
+      delete: "/users/{id}"
+    };
+  }
+}

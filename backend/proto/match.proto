@@ -1,0 +1,178 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+package proto;
+
+message MatchCalendar {
+  string id = 1;
+  string club_one_name = 2;
+  string club_two_name = 3;
+  string intend_time = 4;
+  string real_time = 5;
+  int32 match_round = 6;
+  string match_turn = 7;
+  string id_club_one = 8;
+  string id_club_two = 9;
+  string season = 10;
+  string stadium = 11;
+  string match_status = 12;
+}
+
+message RoundRequest {
+  string round = 1;
+}
+
+
+message MatchCalendarRequest {
+  string id = 1;
+}
+
+message StatusRequest {
+  string status = 1;
+}
+
+message MatchCalendarResponse {
+  message Data {
+    string club_one_name = 1;
+    string club_two_name = 2;
+    string intend_time = 3;
+    string real_time = 4;
+    int32 match_round = 5;
+    string match_turn = 6;
+    string stadium = 7;
+    string season = 8;
+    string match_status = 9;
+    string match_id = 10;
+  }
+  Data data = 1;
+  string message = 2;
+}
+
+message MatchCalendarListResponse {
+  repeated MatchCalendarResponse.Data data = 1;
+  string message = 2;
+}
+
+message ProgressScore {
+  string match_id = 2;
+  string club_name = 3;
+  string player_name = 4;
+  string goal_type = 5;
+  string time_in_match = 6;
+}
+
+message ProgressScoreListResponse{
+  repeated ProgressScore data = 1;
+  string message = 2;
+}
+
+message ProgressCard{
+  string match_id = 2;
+  string club_name = 3;
+  string player_name = 4;
+  string card_type = 5;
+  string time_in_match = 6;
+}
+
+message ProgressCardListResponse{
+  repeated ProgressCard data = 1;
+  string message = 2;
+}
+
+message ResultScore {
+  string match_id = 1;
+  int32 home_team_goal = 2;
+  int32 away_team_goal = 3;
+  string home_team = 4;
+  string away_team = 5;
+  int32 yellow_card_home = 6;
+  int32 yellow_card_away = 7;
+  int32 red_card_home = 8;
+  int32 red_card_away = 9;
+  int32 match_round = 10;
+  string stadium = 11;
+  string capacity = 12;
+  string score = 13;
+  string home_logo = 14;
+  string away_logo = 15;
+  string time = 16;
+  string sea_son = 17;
+}
+
+message ResultScoreRequest{
+  string match_id = 1;
+}
+
+message SumScore {
+  string match_id = 1;
+  int32 home_team_goal = 2;
+  string home_team_name = 3;
+  int32 away_team_goal = 4;
+  string away_team_name = 5;
+  string match_round = 6;
+  string time = 7;
+  string stadium = 8;
+  string score = 9;
+  string home_logo = 10;
+  string away_logo = 11;
+  string home_team_full_name = 12;
+  string away_team_full_name = 13;
+}
+
+message ResultScoreResponse {
+  ResultScore data = 1;
+  string message = 2;
+}
+
+message ResultScoreListResponse {
+  repeated ResultScore data = 1;
+  string message = 2;
+}
+
+message ResultSumScoreListResponse {
+  repeated SumScore data = 1;
+  string message = 2;
+}
+
+message Player {
+  string player_name_card = 1;
+  string card_type = 2;
+  string time_in_match_card = 3;
+  string player_name_goal = 4;
+  string goal_type = 5;
+  string time_in_match_goal = 6;
+}
+
+message Team{
+  string name = 1;
+  string logo = 2;
+  int32 goals = 3;
+  repeated Player players = 4;
+}
+
+message ProgressGoal{
+  string match_id = 1;
+  string stadium = 2;
+  string time = 3;
+  string capacity = 4;
+  Team home_team = 5;
+  Team away_team = 6;
+}
+
+message GoalType{
+  string goal_type_id = 1;
+  string goal_type_name = 2;
+}
+
+message CardType{
+  string card_type_id = 1;
+  string card_type_name = 2;
+}
+
+message GoalTypeResponse {
+  repeated GoalType data = 1;
+  string message = 2;
+}
+message CardTypeResponse{
+  repeated CardType data = 1;
+  string message = 2;
+}

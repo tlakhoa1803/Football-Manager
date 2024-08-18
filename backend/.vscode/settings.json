@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "SE104",
+            "username": "root",
+            "name": "Phat",
+            "group": "Phat ",
+            "askForPassword": true
+        }
+    ]
+}

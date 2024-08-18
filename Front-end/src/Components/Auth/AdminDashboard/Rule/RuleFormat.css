@@ -1,0 +1,56 @@
+/* RuleFormat.css */
+.rule_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rule-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+
+.rule-item label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.rule-item .rule-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rule-item .rule-row span {
+    min-width: 150px;
+}
+
+.rule-item .rule-row .arrow {
+    font-size: 24px;
+}
+
+.rule-item .rule-row input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.rule-item .rule-row button {
+    padding: 9px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.rule-item .rule-row button:hover {
+    background-color: #0056b3;
+}

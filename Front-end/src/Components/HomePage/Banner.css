@@ -1,0 +1,43 @@
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Chỉnh kích thước tùy ý */
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 75px; /* Thêm padding để nút mũi tên không đè lên ảnh */
+  }
+  
+  .banner-container img {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out; /* Hiệu ứng fade */
+    opacity: 1; /* Mặc định hiển thị ảnh */
+    border-radius: 10px;
+  }
+  
+  .banner-container img.fade-out {
+    opacity: 0; /* Khi có lớp .fade-out, ảnh sẽ mờ dần */
+  }
+  
+  
+  .banner-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .banner-button-left {
+    left: 0; /* Giữ vị trí nút mũi tên trái */
+  }
+  
+  .banner-button-right {
+    right: 0; /* Giữ vị trí nút mũi tên phải */
+  }
+  

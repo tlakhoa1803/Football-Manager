@@ -1,0 +1,17 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+app.env
+cli
+main
+.github
+
+config/config.json
+
+.firebaserc
+firebase.json
+database-debug.log
+firestore-debug.log
+ui-debug.log
+cmd/firebase/firebase1.json
+.firebase
+node_modules

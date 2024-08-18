@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package proto;
+import "google/api/annotations.proto";
+import "message.proto";
+import "match.proto";
+import "summary.proto";
+
+service MatchServicePublic {
+    rpc GetAllMatchCalendarsWithStatus (StatusRequest) returns (MatchCalendarListResponse) {
+      option (google.api.http) = {
+        get: "/match/status/{status}"
+      };
+    }
+
+    rpc GetAllMatchCalendar (EmptyRequest) returns (MatchCalendarListResponse) {
+      option (google.api.http) = {
+        get: "/match_calendar/all"
+      };
+    }
+
+    rpc GetAllMatchCalendarByRound (RoundRequest) returns (MatchCalendarListResponse) {
+      option (google.api.http) = {
+        get: "/match_calendar/all/{round}"
+      };
+    }
+
+    rpc GetMatchCalendarById (MatchCalendarRequest) returns (MatchCalendarResponse) {
+      option (google.api.http) = {
+        get: "/match/calendar/{id}"
+      };
+    }
+
+  rpc GetMatchResultByID (ResultScoreRequest) returns (ResultScoreResponse) {
+    option (google.api.http) = {
+      get: "/match/result_score/{match_id}"
+    };
+  }
+  rpc GetAllMatchResults (EmptyRequest) returns (ResultScoreListResponse) {
+    option (google.api.http) = {
+      get: "/match_result/all"
+    };
+  }
+
+  rpc GetSummary(GetSummaryRequest) returns (SummaryListResponse){
+    option (google.api.http) = {
+      get: "/summary/{sea_son}"
+    };
+  }
+  rpc GetAllMatchResultByRound (RoundRequest) returns (ResultSumScoreListResponse) {
+    option (google.api.http) = {
+      get: "/match/result_score/{round}"
+    };
+  }
+  rpc GetProgressScoreByMatchID (ResultScoreRequest) returns (ProgressScoreListResponse) {
+    option (google.api.http) = {
+      get: "/match/progress_score/{match_id}"
+    };
+  }
+  rpc GetProgressCardByMatchID (ResultScoreRequest) returns (ProgressCardListResponse) {
+    option (google.api.http) = {
+      get: "/match/progress_card/{match_id}"
+    };
+  }
+  rpc GetMatchStatisticByMatchID (ResultScoreRequest) returns (ProgressGoal) {
+    option (google.api.http) = {
+      get: "/match/statistic/{match_id}"
+    };
+  }
+  rpc GetAllGoalType (EmptyRequest) returns (GoalTypeResponse) {
+    option (google.api.http) = {
+      get: "/match_event/goal_type"
+    };
+  }
+  rpc GetAllCardType (EmptyRequest) returns (CardTypeResponse) {
+    option (google.api.http) = {
+      get: "/match_event/card_type"
+    };
+  }
+}

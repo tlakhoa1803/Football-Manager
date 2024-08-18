@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package proto;
+import "google/api/annotations.proto";
+import "message.proto";
+import "user.proto";
+import "club.proto";
+
+service ClubServicePublic {
+  //Get a club's information
+  rpc GetClubProfile (ClubProfileIdRequest) returns (ClubProfileResponse) {
+    option (google.api.http) = {
+      get: "/club-profile/{id_club}"
+    };
+  }
+
+  //Get a player's information by club
+  rpc GetPlayerProfileByClub (ClubProfileIdRequest) returns (PlayerProfileListResponse) {
+    option (google.api.http) = {
+      get: "/player-profile/{id_club}"
+    };
+  }
+  rpc GetClubProfileListBySeaSon (ClubProfileIdRequest) returns (ClubProfileListResponse) {
+    option (google.api.http) = {
+      get: "/club-list/{sea_son}"
+    };
+  }
+  rpc GetPlayerProfile (PLayerRequest) returns (PLayerProfileResponse) {
+    option (google.api.http) = {
+      get: "/club/player/{id}"
+    };
+  }
+  rpc GetAllCoachProfile (CoachClubRequest) returns (CoachProfileResponseList) {
+    option (google.api.http) = {
+      get: "/club/coach/{club_id}"
+    };
+  }
+
+}
